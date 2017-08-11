@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!--Соединяем наши классы с таблицами базы данных.Каждое поле класса ассоциируем поля таблицы-->
+<hibernate-mapping>
+    <class name="example.User" table="user">
+        <!-- указываем primary key , name="id" - поле из класса-->
+        <id name="id" column="id">
+           <!--задаём генерацию первичных ключей для таблицы -->
+            <generator class="native"/>
+        </id>
+        <property name="firstname" column="first_name" type="string"/>
+        <property name="lastname" column="last_name" type="string"/>
+        <property name="age" column="age" type="int"/>
+    </class>
+
+</hibernate-mapping>
